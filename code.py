@@ -58,8 +58,7 @@ def sort_by_column(list=[], column=3):
             table1.append([])
             for y in range(r):
                 if len(list) > index:
-                    table1[x].append(y)
-                    table1[x][y] = list[index]
+                    table1[x].extend([list[index]])
                     index += 1
 
         items = []
