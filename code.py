@@ -42,3 +42,36 @@ for i in range(r):
 
 #print table1
 print res
+
+
+
+# --- Functional if you need START
+
+def sort_by_column(list=[], column=3):
+        import math
+        c = column
+        list = sorted(list)
+        r = int(math.ceil(len(list) / c)) + (1 if len(list) % c is not 0 else 0)
+
+        index = 0
+        table1 = []
+        for x in range(c):
+            table1.append([])
+            for y in range(r):
+                if len(list) > index:
+                    table1[x].append(y)
+                    table1[x][y] = list[index]
+                    index += 1
+
+        items = []
+        for i in range(r):
+            for x in table1:
+                try:
+                    items.append(x[i])
+                except IndexError:
+                    items.append("")
+                    pass
+
+        return items
+        
+# --- Functional if you need END
