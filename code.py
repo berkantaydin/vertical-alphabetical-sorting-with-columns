@@ -53,17 +53,17 @@ def sort_by_column(list=[], column=3):
         r = int(math.ceil(len(list) / c)) + (1 if len(list) % c is not 0 else 0)
 
         index = 0
-        table1 = []
+        table = []
         for x in range(c):
-            table1.append([])
+            table.append([])
             for y in range(r):
                 if len(list) > index:
-                    table1[x].extend([list[index]])
+                    table[x].extend([list[index]])
                     index += 1
 
         items = []
         for i in range(r):
-            for x in table1:
+            for x in table:
                 try:
                     items.append(x[i])
                 except IndexError:
